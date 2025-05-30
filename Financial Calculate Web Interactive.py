@@ -602,7 +602,6 @@ if irr_cash_flows:
 
     # Update layout for secondary y-axis and overall appearance
     fig.update_layout(
-        title_text='Annual vs. Cumulative Cash Flow Over Project Period',
         xaxis_title='Year',
         yaxis_title='Annual Cash Flow (£)',
         yaxis2=dict(
@@ -612,12 +611,14 @@ if irr_cash_flows:
         ),
         hovermode='x unified', # Optional: unified hover for better experience
         legend=dict(x=0.01, y=0.99), # Position legend
-        margin=dict(l=0, r=0, t=30, b=0) # Adjust margins if needed
+        margin=dict(l=0, r=0, t=50, b=0) # Reset top margin or adjust as needed for spacing below st.subheader
     )
 
     # Ensure x-axis ticks show integer years
     fig.update_xaxes(tick0=0, dtick=1)
 
+    # Use Streamlit subheader for the title, placed before the chart
+    st.subheader("Annual vs. Cumulative Cash Flow")
     st.plotly_chart(fig, use_container_width=True)
 else:
     st.info("Please set up cash flow data to generate the chart.")
