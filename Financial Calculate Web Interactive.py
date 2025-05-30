@@ -612,7 +612,7 @@ if irr_cash_flows:
         ),
         hovermode='x unified', # Optional: unified hover for better experience
         legend=dict(x=0.01, y=0.99), # Position legend
-        margin=dict(l=0, r=0, t=80, b=0) # Adjust margins if needed
+        margin=dict(l=0, r=0, t=30, b=0) # Adjust margins if needed
     )
 
     # Ensure x-axis ticks show integer years
